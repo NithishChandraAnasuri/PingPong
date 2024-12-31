@@ -1,3 +1,19 @@
+function checkScreenSize() {
+  const gameContainer = document.getElementById("gameContainer");
+  const unsupportedMessage = document.getElementById("unsupportedMessage");
+
+  if (window.innerWidth <= 767) {
+    gameContainer.style.display = "none";
+    unsupportedMessage.style.display = "block";
+  } else {
+    gameContainer.style.display = "block";
+    unsupportedMessage.style.display = "none";
+  }
+}
+
+// Check screen size on load and resize
+window.addEventListener("load", checkScreenSize);
+window.addEventListener("resize", checkScreenSize);
 // declaring variables for elements
 var ball = document.getElementById("ball");
 var rod1 = document.getElementById("rod1");
